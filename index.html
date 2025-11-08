@@ -1,85 +1,291 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Rohan Shingmode | DevOps Engineer</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="DevOps Engineer (2+ years) — Azure/AWS, CI/CD, Terraform, Docker, SonarQube">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohan Shingmode — DevOps Engineer</title>
+  <meta name="description" content="DevOps Engineer (2+ years) specializing in CI/CD pipelines, Azure/AWS, Terraform, Docker, and code quality. Portfolio, projects, resume, and contact." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Rohan Shingmode — DevOps Engineer" />
+  <meta property="og:description" content="CI/CD • Azure/AWS • Terraform • Docker • SonarQube" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://RohanShingmode.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0f1a'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='%237c9cff' font-family='Segoe UI, Roboto, Arial'>R</text></svg>">
   <style>
-    :root{--bg:#0b0f1a;--card:#121829;--muted:#9aa3b2;--text:#e8ecf3;--accent:#7c9cff;}
-    *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0b0f1a,#0d1223);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:900px;margin:0 auto;padding:32px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:24px 28px;box-shadow:0 8px 30px rgba(0,0,0,.25);margin:16px 0}
-    h1{margin:0 0 6px;font-size:32px} h2{margin:0 0 12px;font-size:22px}
-    .muted{color:var(--muted)} .tag{display:inline-block;border:1px solid rgba(255,255,255,.10);padding:4px 10px;border-radius:999px;margin:6px 6px 0 0;font-size:13px;color:#cbd5e1}
-    .list{display:grid;gap:12px} .pill{display:inline-block;background:rgba(124,156,255,.12);border:1px solid rgba(124,156,255,.35);color:#cfe0ff;padding:3px 8px;border-radius:8px;font-size:12px;margin-right:6px}
-    .links a{margin-right:14px} .cta{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(124,156,255,.12)}
-    .grid{display:grid;gap:12px} @media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+    :root{
+      --bg: #0b0f1a;
+      --bg-2: #0d1223;
+      --card: #121829;
+      --muted: #9aa3b2;
+      --text: #e8ecf3;
+      --accent: #7c9cff;
+      --ring: rgba(124,156,255,.45);
+      --ok: #4ade80; --warn:#f59e0b; --bad:#f87171;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg: #f7f9fc; --bg-2:#eef2fb; --card:#ffffff; --text:#0b1020; --muted:#5a6475; --accent:#4258ff; --ring: rgba(66,88,255,.35);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; color:var(--text); background:radial-gradient(1200px 600px at 10% -10%, rgba(124,156,255,.15), transparent 50%), linear-gradient(180deg, var(--bg), var(--bg-2));}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+    .container{max-width:1100px; margin:0 auto; padding:28px}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(10px); background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,0))}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 28px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(180deg, rgba(124,156,255,.25), rgba(124,156,255,.05)); border:1px solid rgba(255,255,255,.1); box-shadow:var(--shadow); display:grid; place-items:center; font-weight:700}
+    .brand .title{font-weight:700}
+    .nav a{opacity:.9}
+    .nav .links{display:flex; gap:18px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.06)}
+    .btn:focus-visible{outline: none; box-shadow:0 0 0 4px var(--ring)}
+    .hero{display:grid; gap:24px; grid-template-columns:1.2fr .8fr; align-items:center; margin-top:16px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:24px; box-shadow:var(--shadow)}
+    h1{margin:0 0 8px; font-size:42px; line-height:1.15}
+    .subtitle{color:var(--muted)}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .badge{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(124,156,255,.10); color:#cfe0ff}
+    .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px}
+    .kpi{padding:14px; border-radius:14px; border:1px dashed rgba(255,255,255,.12); text-align:center}
+    .kpi .n{font-size:22px; font-weight:700}
+    .panel{display:grid; gap:14px}
+
+    .section{margin-top:34px}
+    .section h2{margin:0 0 14px; font-size:24px}
+    .grid{display:grid; gap:14px}
+    .projects{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:1000px){.projects{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.projects{grid-template-columns:1fr}}
+    .project{position:relative; overflow:hidden}
+    .project h3{margin:0 0 6px; font-size:18px}
+    .project p{margin:6px 0 10px}
+    .project .tech{font-size:12px; color:#c7d2fe}
+    .chip{display:inline-block; font-size:12px; padding:4px 8px; border-radius:8px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); margin:2px 6px 0 0}
+
+    .skills{grid-template-columns:repeat(4,1fr)}
+    @media (max-width:900px){.skills{grid-template-columns:repeat(2,1fr)}}
+    .skill{display:flex; align-items:center; gap:10px}
+    .skill svg{flex:0 0 22px}
+
+    .footer{opacity:.75; text-align:center; font-size:14px; padding:18px}
+    .muted{color:var(--muted)}
+
+    /* Fancy underline */
+    .u{background:linear-gradient(transparent 70%, rgba(124,156,255,.35) 0)}
+
+    /* Theme toggle */
+    .toggle{cursor:pointer}
+
+    /* Little entrance animation */
+    .reveal{opacity:0; transform: translateY(8px); animation:reveal .7s ease forwards}
+    .reveal:nth-child(2){animation-delay:.06s}
+    .reveal:nth-child(3){animation-delay:.12s}
+    @keyframes reveal{to{opacity:1; transform:none}}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rohan Shingmode",
+    "jobTitle": "DevOps Engineer",
+    "email": "mailto:rohan.shingmode12@gmail.com",
+    "url": "https://RohanShingmode.github.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/rohanshingmode",
+      "https://github.com/RohanShingmode"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Rohan Shingmode</h1>
-      <div class="muted">DevOps Engineer • 2+ years • Mumbai, India</div>
-      <p class="muted">I build reliable CI/CD pipelines and secure cloud deployments on Azure & AWS using GitHub Actions, Azure DevOps, GitLab, Terraform, Docker, and SonarQube.</p>
-      <div class="links">
-        <a href="mailto:rohan.shingmode12@gmail.com">Email</a> ·
-        <a href="https://www.linkedin.com/in/rohanshingmode" target="_blank" rel="noopener">LinkedIn</a> ·
-        <a href="https://github.com/RohanShingmode" target="_blank" rel="noopener">GitHub</a> ·
-        <a class="cta" href="/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+  <header>
+    <div class="nav container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">RS</div>
+        <div class="title">Rohan Shingmode</div>
       </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="btn toggle" aria-pressed="false" title="Toggle theme">🌓</button>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <h2>Highlights</h2>
-      <ul class="list">
-        <li>End-to-end CI/CD across Azure & AWS (GitHub Actions, Azure DevOps, GitLab).</li>
-        <li>Quality gates with SonarQube; automated testing, packaging, and artifacts.</li>
-        <li>Terraform IaC for AKS/App Services/Key Vault with secure remote state.</li>
-        <li>Reduced cloud spend and downtime through monitoring & automation.</li>
-      </ul>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <div class="panel">
+        <div class="card reveal">
+          <h1>DevOps Engineer who ships <span class="u">fast & reliable</span></h1>
+          <p class="subtitle">I design CI/CD pipelines and secure cloud infrastructure on Azure & AWS. I enjoy measurable impact, clean automation, and great developer experience.</p>
+          <div class="badges" aria-label="Highlights">
+            <span class="badge">GitHub Actions / Azure DevOps / GitLab</span>
+            <span class="badge">Terraform • Docker • Kubernetes</span>
+            <span class="badge">SonarQube • Trivy • Quality Gates</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn" href="/resume.pdf" target="_blank" rel="noopener">⬇️ Download Resume (PDF)</a>
+            <a class="btn" href="#contact">📬 Contact</a>
+            <a class="btn" href="https://github.com/RohanShingmode" target="_blank" rel="noopener">⭐ GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/rohanshingmode" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          </div>
+          <div class="kpis" role="list" aria-label="Outcome metrics">
+            <div class="kpi" role="listitem"><div class="n">3×</div><div class="muted">Faster deployments</div></div>
+            <div class="kpi" role="listitem"><div class="n">-60%</div><div class="muted">Image size via multi-stage builds</div></div>
+            <div class="kpi" role="listitem"><div class="n">0</div><div class="muted">Downtime with slots/blue–green</div></div>
+          </div>
+        </div>
+      </div>
+      <aside class="card reveal" aria-label="Profile">
+        <h2 style="margin:0 0 10px">Rohan Shingmode</h2>
+        <p class="muted" style="margin:0 0 10px">Mumbai, India • 2+ years</p>
+        <ul style="list-style:none; padding:0; margin:0 0 10px">
+          <li>📧 <a href="mailto:rohan.shingmode12@gmail.com">rohan.shingmode12@gmail.com</a></li>
+          <li>🐙 <a href="https://github.com/RohanShingmode" target="_blank" rel="noopener">github.com/RohanShingmode</a></li>
+          <li>💼 <a href="https://www.linkedin.com/in/rohanshingmode" target="_blank" rel="noopener">linkedin.com/in/rohanshingmode</a></li>
+        </ul>
+        <button class="btn" id="copyEmail" type="button">Copy email</button>
+        <div class="muted" id="copyMsg" role="status" aria-live="polite" style="margin-top:8px"></div>
+      </aside>
+    </section>
 
-    <div class="card">
+    <section id="projects" class="section">
       <h2>Selected Projects</h2>
-      <div class="grid">
-        <div>
-          <strong>AKS IaC + Pipelines</strong><br>
-          <span class="pill">Terraform</span> <span class="pill">Azure DevOps</span> <span class="pill">Key Vault</span>
-          <p class="muted">Multi-env AKS infra with reusable modules and secure identities.</p>
-        </div>
-        <div>
-          <strong>.NET & Angular CI/CD</strong><br>
-          <span class="pill">GitHub Actions</span> <span class="pill">SonarQube</span> <span class="pill">Trivy</span>
-          <p class="muted">Build → test → scan → package → deploy with artifact promotion.</p>
-        </div>
-        <div>
-          <strong>Legacy to Containers</strong><br>
-          <span class="pill">Docker</span> <span class="pill">GitLab CI</span>
-          <p class="muted">Containerized IIS app, added health checks and blue/green deploys.</p>
-        </div>
+      <div class="grid projects">
+        <article class="card project">
+          <h3>.NET & Angular CI/CD</h3>
+          <div class="tech">GitHub Actions • Azure Web Apps • SonarQube • Trivy</div>
+          <p>Built an end‑to‑end pipeline: build → test → scan → package → deploy with artifact promotion and approvals. Enforced quality gates to block critical findings.</p>
+          <div>
+            <span class="chip">-70% lead time</span>
+            <span class="chip">Zero‑downtime slots</span>
+            <span class="chip">Artifacts & releases</span>
+          </div>
+        </article>
+        <article class="card project">
+          <h3>Infra as Code (Azure)</h3>
+          <div class="tech">Terraform • Key Vault • App Service • VNets</div>
+          <p>Reusable modules for per‑environment deployments with remote state, locked down secrets, and policy‑as‑code baselines.</p>
+          <div>
+            <span class="chip">Auditable</span>
+            <span class="chip">Idempotent</span>
+            <span class="chip">Repeatable</span>
+          </div>
+        </article>
+        <article class="card project">
+          <h3>Legacy to Containers</h3>
+          <div class="tech">Docker • GitLab CI • AWS ECS</div>
+          <p>Containerized IIS app with health checks and blue/green deploys, reducing rollbacks and MTTR with automated verifications.</p>
+          <div>
+            <span class="chip">Fewer rollbacks</span>
+            <span class="chip">Faster recovery</span>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
+    <section id="skills" class="section">
       <h2>Skills</h2>
-      <div>
-        <span class="tag">Azure / AWS</span>
-        <span class="tag">GitHub Actions</span>
-        <span class="tag">Azure DevOps</span>
-        <span class="tag">GitLab CI/CD</span>
-        <span class="tag">Terraform (IaC)</span>
-        <span class="tag">Docker / Kubernetes</span>
-        <span class="tag">SonarQube / Trivy</span>
-        <span class="tag">NGINX / IIS</span>
-        <span class="tag">Prometheus / Grafana</span>
+      <div class="grid skills">
+        <div class="card skill">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l4 4-4 4-4-4 4-4zm0 12l4 4-4 4-4-4 4-4z"/></svg>
+          <div><strong>Cloud</strong><div class="muted">Azure, AWS</div></div>
+        </div>
+        <div class="card skill">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+          <div><strong>CI/CD</strong><div class="muted">GitHub Actions, Azure DevOps, GitLab</div></div>
+        </div>
+        <div class="card skill">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 4h16v10H4z"/><path fill="currentColor" d="M2 18h20v2H2z"/></svg>
+          <div><strong>Containers</strong><div class="muted">Docker, basic Kubernetes</div></div>
+        </div>
+        <div class="card skill">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l9 4-9 4-9-4 9-4zm-9 8l9 4 9-4v6l-9 4-9-4v-6z"/></svg>
+          <div><strong>IaC & Security</strong><div class="muted">Terraform, SonarQube, Trivy</div></div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card muted">© <span id="y"></span> Rohan Shingmode — Deployed on GitHub Pages</div>
-  </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="card">
+        <p>Hi, I’m Rohan — a DevOps Engineer focused on developer experience, reliability, and pragmatic automation. I collaborate with teams to ship faster while keeping quality high through testing, code scanning, and observable systems.</p>
+        <p class="muted">Open to roles where I can own CI/CD, IaC, and platform improvements. Based in Mumbai; comfortable with remote or hybrid.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          Email: <a href="mailto:rohan.shingmode12@gmail.com">rohan.shingmode12@gmail.com</a> •
+          LinkedIn: <a href="https://www.linkedin.com/in/rohanshingmode" target="_blank" rel="noopener">/in/rohanshingmode</a>
+        </p>
+        <form action="mailto:rohan.shingmode12@gmail.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:520px">
+          <label>
+            <span>Name</span><br>
+            <input required name="name" class="card" style="padding:10px; width:100%" />
+          </label>
+          <label>
+            <span>Email</span><br>
+            <input required type="email" name="email" class="card" style="padding:10px; width:100%" />
+          </label>
+          <label>
+            <span>Message</span><br>
+            <textarea required name="message" rows="4" class="card" style="padding:10px; width:100%"></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+        </form>
+        <p class="muted" style="margin-top:8px">Prefer direct email? Click the button above or use the address. No JavaScript tracking or third‑party forms.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="muted">Last updated: <span id="lastUpdated"></span></div>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Rohan Shingmode — Designed & built by me. Deployed on GitHub Pages.</footer>
+
+  <script>
+    // Theme toggle
+    const btn = document.getElementById('themeToggle');
+    const setTheme = (mode) => {
+      document.documentElement.dataset.theme = mode;
+      localStorage.setItem('theme', mode);
+      btn.setAttribute('aria-pressed', mode === 'dark');
+    };
+    btn?.addEventListener('click', () => {
+      const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setTheme(t === 'dark' ? 'light' : 'dark');
+    });
+    const initTheme = localStorage.getItem('theme');
+    if(initTheme){ setTheme(initTheme); }
+
+    // Footer year & last updated
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString(undefined, {year:'numeric', month:'short', day:'numeric'});
+
+    // Copy email helper
+    const copyBtn = document.getElementById('copyEmail');
+    const msg = document.getElementById('copyMsg');
+    copyBtn?.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText('rohan.shingmode12@gmail.com');
+        msg.textContent = 'Email copied to clipboard!';
+      }catch(e){ msg.textContent = 'Copy failed. Please copy manually.'; }
+      setTimeout(() => msg.textContent = '', 3000);
+    });
+  </script>
 </body>
 </html>
